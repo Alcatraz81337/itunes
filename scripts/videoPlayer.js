@@ -87,6 +87,11 @@ export const videoPlayerInit = () => {
   videoFullScreen.addEventListener("click", () => {
     videoPlayer.requestFullscreen();
   });
+
+  videoPlayerInit.stop = () => {
+    videoPlayer.pause();
+    toggleIcon();
+  };
 };
 
 /* export default videoPlayerInit; */

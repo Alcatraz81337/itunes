@@ -13,9 +13,19 @@ export const musicPlayerInit = () => {
   const audioTimeTotal = document.querySelector(".audio-time__total");
   const audioVolume = document.querySelector(".audio-volume");
 
-  const playlist = ["hello", "flow", "speed"];
+  const playlist = ["Skellige", "Lazare", "Tavern"];
 
   let trackIndex = 0;
+
+  const toggleIcon = () => {
+    if (audioPlayer.paused) {
+      audioButtonPlay.classList.remove("fa-pause");
+      audioButtonPlay.classList.add("fa-play");
+    } else {
+      audioButtonPlay.classList.remove("fa-play");
+      audioButtonPlay.classList.add("fa-pause");
+    }
+  };
 
   const loadTrack = () => {
     const isPlayed = audioPlayer.paused;
@@ -116,4 +126,10 @@ export const musicPlayerInit = () => {
   audioPlayer.volume = 0.5;
 
   audioVolume.value = audioPlayer.volume * 100;
+
+  musicPlayerInit.stop = () => {
+    audioPlayer.pause();
+    audio.classList.remove("play");
+    toggleIcon();
+  };
 };
