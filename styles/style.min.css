@@ -5,6 +5,7 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box}*,*::before,*::after{-w
 .video-icon {
   margin: 5px;
 }
+.audio-volume,
 .radio-volume,
 .video-volume {
   max-width: 100px;
